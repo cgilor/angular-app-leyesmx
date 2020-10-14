@@ -1,0 +1,123 @@
+<div class="row animated fadeIn fast">
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Usuarios</h3>
+
+                <div class="alert alert-info animated fadeIn fast"
+                    *ngIf="usuarios.length === 0">
+                  <p class="mb-0">
+                      No hay usuario con ese término
+                  </p>
+                </div>
+
+                <div class="table-responsive"
+                    *ngIf="usuarios.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuario of usuarios"
+                                class="animated fadeIn fast">
+                                <td>
+                                    <img [src]="usuario.img | imagen:'usuarios'" 
+                                         class="w75"/>
+                                </td>
+                                <td>{{ usuario.nombre }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Leyes</h3>
+
+                <div class="alert alert-info animated fadeIn fast"
+                    *ngIf="leyes.length === 0">
+                  <p class="mb-0">
+                      No hay leyes con ese término
+                  </p>
+                </div>
+
+                <div class="table-responsive"
+                    *ngIf="leyes.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let ley of leyes"
+                                class="animated fadeIn fast">
+                                <td>
+                                    <img [src]="ley.img | imagen:'leyes'" 
+                                         class="w75"/>
+                                </td>
+                                <td>{{ ley.nombre }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Articulos</h3>
+
+                <div class="alert alert-info animated fadeIn fast"
+                    *ngIf="articulos.length === 0">
+                  <p class="mb-0">
+                      No hay médicos con ese término
+                  </p>
+                </div>
+
+                <div class="table-responsive"
+                    *ngIf="articulos.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Médico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let articulo of articulos"
+                                class="animated fadeIn fast">
+                                <td>
+                                    <img [src]="articulo.img | imagen:'articulos'" 
+                                         class="w75"/>
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/dashboard/articulos', articulo._id ]">
+                                        {{ articulo.nombre }}
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div> 

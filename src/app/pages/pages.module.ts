@@ -20,6 +20,7 @@ import { LeyesComponent } from './mantenimientos/leyes/leyes.component';
 import { ArticulosComponent } from './mantenimientos/articulos/articulos.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ArticuloComponent } from './mantenimientos/articulos/articulo.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -38,6 +39,7 @@ import { ArticuloComponent } from './mantenimientos/articulos/articulo.component
     LeyesComponent,
     ArticulosComponent,
     ArticuloComponent,
+    BusquedaComponent,
   ],
   exports: [
     DashboardComponent,

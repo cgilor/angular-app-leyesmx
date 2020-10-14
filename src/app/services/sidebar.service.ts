@@ -5,29 +5,37 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
 
-  menu: any[] = [
-    {
-      titulo: 'Dashboard',
-      icono: 'mdi mdi-gauge',
-      submenu: [
-        { titulo: 'Main', url: '/' },
-        { titulo: 'Gráficas', url: 'grafica1' },
-        { titulo: 'rxjs', url: 'rxjs' },
-        { titulo: 'Promesas', url: 'promesas' },
-        { titulo: 'ProgressBar', url: 'progress' },
-      ]
-    },
 
-    {
-      titulo: 'Mantenimientos',
-      icono: 'mdi mdi-folder-lock-open',
-      submenu: [
-        { titulo: 'Usuarios', url: 'usuarios' },
-        { titulo: 'leyes', url: 'leyes' },
-        { titulo: 'Articulos', url: 'articulos' },
-      ]
-    },
-  ];
+  public menu = [];
 
-  constructor() { }
+  cargarMenu() {
+    this.menu = JSON.parse(localStorage.getItem('menu')) || [];
+  }
+
+
+ //// menu: any[] = [
+  //  {
+  //    titulo: 'Dashboard',
+  //    icono: 'mdi mdi-gauge',
+  //    submenu: [
+  //      { titulo: 'Main', url: '/' },
+  //      { titulo: 'Gráficas', url: 'grafica1' },
+  //      { titulo: 'rxjs', url: 'rxjs' },
+  //      { titulo: 'Promesas', url: 'promesas' },
+  //      { titulo: 'ProgressBar', url: 'progress' },
+  //    ]
+  //  },
+//
+  //  {
+  //    titulo: 'Mantenimientos',
+  //    icono: 'mdi mdi-folder-lock-open',
+  //    submenu: [
+  //      { titulo: 'Usuarios', url: 'usuarios' },
+  //      { titulo: 'leyes', url: 'leyes' },
+  //      { titulo: 'Articulos', url: 'articulos' },
+  //    ]
+  //  },
+  //];
+//
+  //constructor() { }
 }
