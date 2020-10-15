@@ -65,7 +65,7 @@ export class ArticulosComponent implements OnInit {
   borrarArticulo( articulo: Articulo ) {
 
     Swal.fire({
-      title: '¿Borrar médico?',
+      title: '¿Borrar articulo?',
       text: `Esta a punto de borrar a ${ articulo.nombre }`,
       icon: 'question',
       showCancelButton: true,

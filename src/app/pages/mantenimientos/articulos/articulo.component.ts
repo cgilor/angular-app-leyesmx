@@ -89,7 +89,8 @@ export class ArticuloComponent implements OnInit {
       // actualizar
       const data = {
         ...this.articuloForm.value,
-        _id: this.articuloSeleccionado._id
+        _id: this.articuloSeleccionado._id,
+        
       }
       this.articuloService.actualizarArticulo( data )
         .subscribe( resp => {
