@@ -5,7 +5,7 @@
                 
                 <input type="text"
                         class="form-control"
-                        placeholder="Buscar médico..."
+                        placeholder="Buscar articulo..."
                         #txtTermino
                         (keyup)="buscar( txtTermino.value )"/>
 
@@ -37,9 +37,9 @@
 
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="card-title">Medicos ({{ articulos.length }})</h4>
+                        <h4 class="card-title">Articulos ({{ articulos.length }})</h4>
                         <h6 class="card-subtitle">
-                            Medicos registrados en mi aplicación
+                            Articulos registrados en mi aplicación
                         </h6>
                     </div>
 
@@ -48,7 +48,7 @@
                             <a class="btn btn-primary"
                                routerLink="/dashboard/articulos/nuevo">
                                 <i class="fa fa-hospital-o"></i> 
-                                Crear médico
+                                Crear Articulos
                             </a>
                         </div>
                     </div>
@@ -59,11 +59,12 @@
 
                 <div class="table-responsive">
                     <table class="table table-bordered">
-                        <thead>
-                            <tr>
+                        <thead >
+                            <tr >
                                 <th class="w100">Foto</th>
-                                <th>Nombre</th>
-                                <th class="w100 text-nowrap">Acciones</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Articulo</th>
+                                <th class="w100 text-nowrap text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,11 +75,14 @@
                                         class="w100 cursor"
                                         (click)="abrirModal(articulo)"> 
                                 </td>
-                                <td>
+                                <td class="w100">
                                     {{ articulo.nombre }}
                                 </td>
+                                <td>
+                                    {{ articulo.cuerpo }}
+                                </td>
 
-                                <td class="text-nowrap text-center">
+                                <td class="text-nowrap text-center w100">
                                     <a [routerLink]="['/dashboard','articulos', articulo._id ]" 
                                         data-toggle="tooltip" 
                                         data-original-title="Editar">
@@ -101,6 +105,7 @@
                 <button class="btn btn-secondary">Anteriores</button>
                 &nbsp;
                 <button class="btn btn-secondary">Siguientes</button> -->
+                
 
             </div>
         </div>

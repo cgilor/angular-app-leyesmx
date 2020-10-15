@@ -38,6 +38,7 @@ export class ArticuloComponent implements OnInit {
     this.articuloForm = this.fb.group({
       nombre: ['', Validators.required ],
       leyes: ['', Validators.required ],
+      cuerpo: ['', Validators.required ]
     });
 
     this.cargarLeyes();
@@ -65,9 +66,9 @@ export class ArticuloComponent implements OnInit {
           return this.router.navigateByUrl(`/dashboard/articulos`);
         }
 
-        const { nombre, leyes:{ _id } } = articulo; 
+        const { nombre, leyes:{ _id }, cuerpo } = articulo; 
         this.articuloSeleccionado = articulo;
-        this.articuloForm.setValue({ nombre, leyes: _id });
+        this.articuloForm.setValue({ nombre, leyes: _id, cuerpo });
       });
 
   }

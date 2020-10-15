@@ -12,6 +12,7 @@ export class Articulo {
     constructor(
         public nombre: string,
         public _id?: string,
+        public cuerpo?: string,
         public img?: string,
         public usuario?: _ArticuloUser,
         public leyes?: Ley

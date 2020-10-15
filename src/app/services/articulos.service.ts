@@ -46,7 +46,7 @@ export class ArticulosService {
               );
   }
 
-  crearArticulo( articulo: { nombre: string, ley: string } ) {
+  crearArticulo( articulo: { nombre: string, ley: string, cuerpo: string } ) {
 
     const url = `${ base_url }/articulos/`;
     console.log(articulo);
