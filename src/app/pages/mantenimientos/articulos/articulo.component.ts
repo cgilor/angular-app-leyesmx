@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { Articulo } from '../../../models/articulos.model';
@@ -38,7 +38,8 @@ export class ArticuloComponent implements OnInit {
     this.articuloForm = this.fb.group({
       nombre: ['', Validators.required ],
       leyes: ['', Validators.required ],
-      cuerpo: ['', Validators.required ]
+      cuerpo: ['', Validators.required ],
+      indiceArt: this.fb.array([])
     });
 
     this.cargarLeyes();
@@ -50,6 +51,49 @@ export class ArticuloComponent implements OnInit {
         })
   }
 
+  get indiceArt() {
+    return this.articuloForm.get('indiceArt') as FormArray;
+
+  }
+
+  
+
+  hacerindice(){
+
+    return  this.fb.group({
+      nombreIndice:[''],
+      cuerpoIndice:[''],
+      SubIndice: this.fb.array([ ])
+
+    });
+    
+  }
+  addIndices(){
+
+    this.indiceArt.push(this.hacerindice());
+    
+  }
+  
+  quitarIndice(i: number){
+    this.indiceArt.removeAt(i);
+  }
+  
+  SubIndice(i: number) {
+    return this.indiceArt.at(i).get('SubIndice') as FormArray;
+
+  }
+
+  hacerSubIndice(){
+    return this.fb.group ({
+      nombreSubIndice: [''],
+      cuerpoSubIndice:[''],
+    })
+  }
+
+addSubIndice(i: number){
+  this.SubIndice(i).push(this.hacerSubIndice());
+}
+  
   cargarArticulo(id: string) {
 
     if ( id === 'nuevo' ) {

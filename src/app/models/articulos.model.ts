@@ -13,6 +13,22 @@ export class Articulo {
         public nombre: string,
         public _id?: string,
         public cuerpo?: string,
+        public indiceArt?: [
+            {
+            nombreIndice?: string,
+            cuerpoIndice?: string,
+                SubIndice?:[
+                    {
+                    nombreSubIndice?:string,
+                    cuerpoSubIndice?:string,
+                    subIndice2?:[
+                        {
+                        nomnbreSubIndice2?:string,
+                        CuerpoSubIndice?:string
+                    }]
+                }]
+        }
+    ],
         public img?: string,
         public usuario?: _ArticuloUser,
         public leyes?: Ley

@@ -1,6 +1,6 @@
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="card">
             <div class="card-body">
                 
@@ -49,7 +49,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <div formArrayName="indiceArt" *ngFor="let indice of indiceArt.controls; let i = index">
+                            <div [formGroupName]="i">
+                                <div>
+                                    <label [attr.for]="'nombreIndice' + i">nombreIndice</label><br />
+                                    <input type="text"  [attr.id]="'nombreIndice' + i" class="form-control" formControlName="nombreIndice" />
+                                  </div>
+                                  <div>
+                                    <label [attr.for]="'cuerpoIndice' + i">cuerpoIndice</label><br />
+                                    <input type="text"  [attr.id]="'cuerpoIndice' + i" class="form-control" formControlName="cuerpoIndice"/>
+                                  </div>
+                                  <button type="button" class="btn btn-primary" (click)="quitarIndice(i)" > quitar</button>
+                                  <button type="button" class="btn btn-primary btn-block" (click)="addSubIndice(i)" >+ Agregar</button>
 
+                                  <div formArrayName="SubIndice" *ngFor="let sindice of SubIndice(i).controls; let j = index">
+                                    <div [formGroupName]="j">
+                                        <div>
+                                            <label [attr.for]="'nombreSubIndice' + j">nombreSubIndice</label><br />
+                                            <input type="text" [attr.id]="'nombreSubIndice' + j" class="form-control" formControlName="nombreSubIndice" />
+                                          </div>
+                                          <div>
+                                            <label [attr.for]="'cuerpoSubIndice' + j">cuerpoIndice</label><br />
+                                            <input type="text"  [attr.id]="'cuerpoSubIndice' + j" class="form-control" formControlName="cuerpoSubIndice"/>
+                                          </div>
+                                          
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                    
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" (click)="addIndices()" >+ Agregar</button>
                     <div class="form-group row">
                         <label for="exampleInputEmail3" class="col-sm-3 control-label">Ley</label>
                         <div class="col-sm-9">
