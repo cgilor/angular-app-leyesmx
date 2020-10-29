@@ -68,7 +68,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let articulo of articulos">
+                            <tr *ngFor="let articulo of articulos; ">
                                 <td class="text-center"> 
                                     <img [src]="articulo.img | imagen:'articulos'" 
                                         [alt]="articulo.nombre"
@@ -79,7 +79,13 @@
                                     {{ articulo.nombre }}
                                 </td>
                                 <td>
-                                    {{ articulo.cuerpo }}
+                                    {{ articulo.cuerpo }}<br>
+                                    <p class="parrafo">
+                                       
+                                            {{ articulo.indiceArt[0].nombreIndice }}:{{ articulo.indiceArt[0].cuerpoIndice }}
+                                       
+                                    </p>
+    
                                 </td>
 
                                 <td class="text-nowrap text-center w100">

@@ -57,3 +57,7 @@
     width: 100%;
     z-index: 9999;
 }
+
+.parrafo {
+    text-indent: 1.5em;
+}
