@@ -78,9 +78,9 @@
                                 <td class="w100">
                                     {{ articulo.nombre }}
                                 </td>
-                                <td>
+                                <td class="texto">
                                     {{ articulo.cuerpo }}<br>
-                                    <p class="parrafo">
+                                    <p *ngIf="articulo.indiceArt[0] != null" class="parrafo">
                                        
                                             {{ articulo.indiceArt[0].nombreIndice }}:{{ articulo.indiceArt[0].cuerpoIndice }}
                                        
